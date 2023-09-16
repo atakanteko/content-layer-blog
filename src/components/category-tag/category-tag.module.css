@@ -1,0 +1,12 @@
+.category_tag {
+  border-radius: 6px;
+  padding: 4px 10px;
+}
+
+.badge_text {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  color: #fff;
+}

@@ -1,0 +1,145 @@
+.container {
+  margin-top: 50px;
+  position: relative;
+  height: 700px;
+  display: grid;
+  grid-template: repeat(23, 1fr) / repeat(12, 1fr);
+}
+.image {
+  width: 100%;
+  object-fit: cover;
+  z-index: 0;
+  grid-area: 1 / 1 / 21 / 13;
+  border-radius: 12px;
+}
+
+.featured_card {
+  grid-area: 14 / 2 / 24 / 8;
+  z-index: 2;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0px 12px 24px -6px rgba(24, 26, 42, 0.12);
+  border: 1px solid #e8e8ea;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.title {
+  margin-top: 16px;
+  margin-bottom: 24px;
+  color: #181a2a;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 40px;
+}
+
+.featured_card_info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 24px;
+  color: #97989f;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.author_name {
+  font-weight: 500;
+}
+
+.date {
+  font-weight: 400;
+}
+
+@media screen and (max-width: 1440px) {
+  .container {
+    height: 500px;
+    grid-template: repeat(20, 1fr) / repeat(12, 1fr);
+  }
+
+  .featured_card {
+    grid-area: 10 / 1 / 20 / 12;
+    background-color: transparent;
+    box-shadow: unset;
+    border: unset;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .title {
+    color: #fff;
+  }
+
+  .featured_card_info {
+    color: #fff;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .featured_card {
+    grid-area: 9 / 1 / 19 / 12;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .image {
+    grid-area: 1 / 1 / 18 / 13;
+    border-radius: 12px;
+  }
+  .featured_card {
+    grid-area: 11 / 2 / 21 / 12;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0px 12px 24px -6px rgba(24, 26, 42, 0.12);
+    border: 1px solid #e8e8ea;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .title {
+    color: #181a2a;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 40px;
+  }
+  .featured_card_info {
+    color: #97989f;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .featured_card {
+    padding: 20px;
+  }
+  .title {
+    font-size: 18px;
+    line-height: 30px;
+  }
+  .featured_card_info {
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .featured_card_info {
+    gap: 0px;
+    flex-direction: column;
+  }
+  .date {
+    margin-left: 12px;
+  }
+}
