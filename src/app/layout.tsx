@@ -2,6 +2,8 @@ import Navbar from '@/components/navbar/navbar';
 import './globals.css';
 import type { Metadata } from 'next';
 import { Work_Sans } from 'next/font/google';
+import { ThemeContextProvider } from '@/context/ThemeContext';
+import ThemeProvider from '@/components/providers/ThemeProvider';
 
 const inter = Work_Sans({ subsets: ['latin'] });
 
@@ -18,10 +20,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="container">
-          <Navbar />
-          <div className="wrapper">{children}</div>
-        </div>
+        <ThemeContextProvider>
+          <ThemeProvider>
+            <div className="container">
+              <Navbar />
+              <div className="wrapper">{children}</div>
+            </div>
+          </ThemeProvider>
+        </ThemeContextProvider>
       </body>
     </html>
   );
