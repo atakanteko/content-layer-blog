@@ -23,8 +23,8 @@ const Navbar = () => {
           <Image
             src="/images/icons/hamburger-icon.svg"
             alt=""
-            width={32}
-            height={32}
+            width={40}
+            height={40}
             className={styles.hamburger_icon}
           />
         </div>

@@ -1,5 +1,5 @@
 :root {
-  --bg: #e8e8ea;
+  --bg: #111;
   --textColor: #3b3c4a;
   --softBg: #f0f0f0;
   --softTextColor: #626262;
@@ -14,21 +14,25 @@
 }
 
 .dark {
-  --bg: #181a2a;
-  --textColor: #ddd;
+  --bg: #111;
+  --textColor: #fff;
   --softBg: #1f273a;
   --softTextColor: #a6a6a6;
   --headingColor: #fff;
   --theme-toggle-bg: #4b6bfb;
+  --bg-box: #fff;
+  --bg-box-text: #111;
 }
 
 .light {
   --bg: #e8e8ea;
-  --textColor: black;
+  --textColor: 111;
   --softBg: #f0f0f0;
   --softTextColor: #626262;
   --headingColor: #181a2a;
   --theme-toggle-bg: #e8e8ea;
+  --bg-box: #111;
+  --bg-box-text: #fff;
 }
 
 body {

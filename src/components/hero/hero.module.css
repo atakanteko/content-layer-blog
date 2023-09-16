@@ -1,0 +1,101 @@
+.container {
+  margin-top: 80px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.left {
+  flex: 2;
+}
+
+.first_article_title {
+  color: var(--textColor);
+  font-size: 58px;
+}
+
+.subinfo {
+  margin-top: 30px;
+  border-top: 1px solid rgb(212, 209, 209);
+  display: flex;
+  justify-content: space-between;
+}
+
+.subinfo_author {
+  padding-top: 20px;
+  color: rgb(160, 157, 157);
+  display: flex;
+  gap: 40px;
+}
+
+.more {
+  padding-top: 20px;
+}
+.more_text {
+  cursor: pointer;
+  color: #5a75f3;
+}
+/* pink card */
+
+.right {
+  flex: 1.5;
+}
+
+.box {
+  border-bottom-left-radius: 50px;
+  background-color: #e13b70;
+}
+
+.latest {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.tag {
+  width: max-content;
+  padding: 10px 20px;
+  background-color: var(--bg-box);
+  border-bottom-left-radius: 20px;
+}
+
+.tagText {
+  color: var(--bg-box-text);
+}
+
+.textContent {
+  padding-left: 60px;
+  padding-right: 40px;
+  padding-bottom: 20px;
+}
+
+.title {
+  color: #fff;
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+.desc {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.info {
+  color: #111;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.readMore {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.readMoreText {
+  cursor: pointer;
+  text-transform: capitalize;
+  font-weight: 600;
+}

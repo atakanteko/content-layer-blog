@@ -1,7 +1,6 @@
 .container {
   height: 84px;
-  background: #181a2a;
-  box-shadow: 0px 4px 70px 0px rgba(30, 40, 52, 0.08);
+  background: #111;
   display: flex;
   align-items: center;
   justify-content: space-between;
