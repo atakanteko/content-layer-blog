@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './navbar.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
+import NavigateLink from '../navigate-link/navigate-link';
+import { NavbarContainer } from './container';
 
 const Navbar = () => {
   return (
@@ -13,12 +15,14 @@ const Navbar = () => {
           height={32}
           alt="logo"
         />
-        <h2>tekoblog</h2>
+        <h2 className={styles.logo_text}>tekoblog</h2>
       </div>
       <div className={styles.links}>
-        <Link href="/categories">Kategori</Link>
-        <Link href="/about-me">Hakkımda</Link>
-        <Link href="/contact">İletişim</Link>
+        {NavbarContainer.socialLinks.map((link) => (
+          <NavigateLink targetLink={link.targetLink} key={link.id}>
+            <Image src={link.image} alt={link.altInfo} width={24} height={24} />
+          </NavigateLink>
+        ))}
       </div>
     </div>
   );
