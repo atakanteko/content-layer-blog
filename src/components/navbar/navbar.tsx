@@ -16,7 +16,7 @@ const Navbar = () => {
           height={32}
           alt="logo"
         />
-        <h2 className={styles.logo_text}>tekoblog</h2>
+        <h2 className={styles.logo_text}>bytebadger</h2>
       </div>
       <div className={styles.right}>
         <div className={styles.hamburger}>
