@@ -1,34 +1,40 @@
 import React from 'react';
 import styles from './post-card.module.css';
 import Image from 'next/image';
+import { PostType } from '@/components/home/latest-posts/latest-posts';
+import Link from 'next/link';
+import { DateHelper } from '@/helpers/DateHelper';
 
-const PostCard = () => {
+const PostCard = ({ post }: { post: Partial<PostType> }) => {
   return (
-    <div className={styles.post_card}>
-      <div className={styles.text_container}>
-        <div className={styles.header}>
-          <span className={styles.date}>18 Eylül 2023</span>
-          <span className={styles.tag}>Technology</span>
+    <article>
+      <Link href={post.slug!} className={styles.post_card}>
+        <div className={styles.text_container}>
+          <div className={styles.header}>
+            <span className={styles.date}>
+              {DateHelper.formatDate(post.date!)}
+            </span>
+            {post.tags?.map((tag) => (
+              <span className={styles.tag} key={tag._id}>
+                {tag.title}
+              </span>
+            ))}
+          </div>
+          <div className={styles.post_text}>
+            <h2 className={styles.post_title}>{post.title}</h2>
+            <p className={styles.post_desc}>{post.description}</p>
+          </div>
         </div>
-        <div className={styles.post_text}>
-          <h2 className={styles.post_title}>
-            10 Hilarious Cartoons That Depict Real-Life Problems of Programmers
-          </h2>
-          <p className={styles.post_desc}>
-            Redefined the user acquisition and redesigned the onboarding
-            experience, all within 3 working weeks.
-          </p>
+        <div className={styles.img_container}>
+          <Image
+            src={post.image || `/images/home/bg-dashboard.png`}
+            fill
+            alt=""
+            className={styles.post_card_img}
+          />
         </div>
-      </div>
-      <div className={styles.img_container}>
-        <Image
-          src="/images/home/bg-dashboard.png"
-          fill
-          alt=""
-          className={styles.post_card_img}
-        />
-      </div>
-    </div>
+      </Link>
+    </article>
   );
 };
 
