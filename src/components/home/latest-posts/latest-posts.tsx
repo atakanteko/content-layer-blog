@@ -36,14 +36,16 @@ export type PostType = Post;
 
 const LatestPosts = ({ allPosts }: { allPosts: PostType[] }) => {
   return (
-    <div className={styles.container}>
+    <>
       <div className={styles.title}>
         <h3>En son eklenen yazılar</h3>
       </div>
-      {allPosts.map((post) => (
-        <PostCard key={post._id} post={post} />
-      ))}
-    </div>
+      <div className={styles.container}>
+        {allPosts.map((post) => (
+          <PostCard key={post._id} post={post} />
+        ))}
+      </div>
+    </>
   );
 };
 
