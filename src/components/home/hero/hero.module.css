@@ -99,3 +99,44 @@
   text-transform: capitalize;
   font-weight: 600;
 }
+
+@media screen and (max-width: 1440px) {
+  .first_article_title {
+    font-size: 48px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .left {
+    flex: 2;
+  }
+  .first_article_title {
+    font-size: 38px;
+  }
+
+  /* right */
+  .right {
+    flex: 2;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .first_article_title {
+    font-size: 52px;
+  }
+
+  /* right */
+  .box {
+    border-bottom-left-radius: 0px;
+  }
+
+  .textContent {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+  }
+}

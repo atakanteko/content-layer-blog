@@ -47,4 +47,7 @@
   .container {
     padding-inline: 20px;
   }
+  .links {
+    display: none;
+  }
 }
