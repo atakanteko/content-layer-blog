@@ -1,13 +1,18 @@
 .container {
+  background: var(--bg);
+}
+
+.wrapper {
   height: 84px;
-  background: #111;
+  max-width: 1216px;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-inline: 104px;
 }
 
-.logo {
+.logo_link {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,7 +20,8 @@
 }
 
 .logo_text {
-  color: #fff;
+  color: var(--logo-color);
+  font-weight: 600;
 }
 
 .right {
@@ -28,6 +34,10 @@
   cursor: pointer;
 }
 
+.hamburger_icon {
+  margin-top: 2px;
+}
+
 .links {
   color: #fff;
   display: flex;
@@ -36,18 +46,26 @@
   gap: 30px;
 }
 
-@media screen and (max-width: 1280px) {
-  .container {
+@media screen and (max-width: 1440px) {
+  .wrapper {
+    max-width: 1024px;
     padding-inline: 40px;
   }
 }
 
-/* Tablet */
 @media screen and (max-width: 768px) {
-  .container {
+  .wrapper {
+    max-width: 670px;
     padding-inline: 20px;
   }
   .links {
     display: none;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 640px) {
+  .wrapper {
+    max-width: 475px;
   }
 }

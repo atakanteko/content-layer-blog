@@ -10,9 +10,9 @@ import { ThemeTypeEnum } from '@/ts/enums/app-enums';
 
 const ThemeToggle = () => {
   const themeCtx = useThemeContext();
-  console.log();
   return (
     <div
+      onClick={() => themeCtx.toggleTheme()}
       style={
         themeCtx.theme === ThemeTypeEnum.LIGHT
           ? { justifyContent: 'flex-start' }
@@ -20,7 +20,7 @@ const ThemeToggle = () => {
       }
       className={styles.theme_toggle}
     >
-      <div className={styles.theme_icon} onClick={() => themeCtx.toggleTheme()}>
+      <div className={styles.theme_icon}>
         <ThemeIcon />
       </div>
     </div>

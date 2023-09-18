@@ -1,4 +1,5 @@
 .theme_toggle {
+  cursor: pointer;
   width: 48px;
   height: 28px;
   border-radius: 100px;
@@ -9,7 +10,6 @@
 }
 
 .theme_icon {
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;

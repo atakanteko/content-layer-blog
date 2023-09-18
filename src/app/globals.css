@@ -5,6 +5,7 @@
   --softTextColor: #626262;
   --headingColor: #181a2a;
   --theme-toggle-bg: #e8e8ea;
+  --logo-color: #111;
 }
 
 * {
@@ -19,9 +20,10 @@
   --softBg: #1f273a;
   --softTextColor: #a6a6a6;
   --headingColor: #fff;
-  --theme-toggle-bg: #4b6bfb;
+  --theme-toggle-bg: #77c3ed;
   --bg-box: #fff;
   --bg-box-text: #111;
+  --logo-color: #fff;
 }
 
 .light {
@@ -30,9 +32,10 @@
   --softBg: #f0f0f0;
   --softTextColor: #626262;
   --headingColor: #181a2a;
-  --theme-toggle-bg: #e8e8ea;
+  --theme-toggle-bg: #eea518;
   --bg-box: #111;
   --bg-box-text: #fff;
+  --logo-color: #111;
 }
 
 body {
