@@ -6,8 +6,8 @@ const setLocalStorageItem = <T>(key: LocalStorageEnum, value: T): void => {
 };
 
 const getLocalStorageItem = (key: LocalStorageEnum): ISystemState => {
-  const data = localStorage.getItem(key);
-  return data !== null ? JSON.parse(data) : null;
+    const data = localStorage.getItem(key);
+    return data !== null ? JSON.parse(data) : null;
 };
 
 const deleteLocalStorageItem = (key: LocalStorageEnum) => {
@@ -24,5 +24,4 @@ export const LocalStorageHelper = {
     deleteLocalStorageItem,
     clearItems,
 };
-  
-  
+
