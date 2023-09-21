@@ -8,6 +8,10 @@ interface BlogDetailPageProps {
   };
 }
 
+export function absoluteUrl(path: string) {
+  return `${process.env.NEXT_PUBLIC_APP_URL}${path}`;
+}
+
 async function getPostFromParams(params: { slug: string }) {
   const post = allPosts.find((post) => post.slugAsParams === params?.slug);
 
@@ -27,12 +31,12 @@ export async function generateMetadata({
     return {};
   }
 
-  // const url = env.NEXT_PUBLIC_APP_URL
+  const url = process.env.NEXT_PUBLIC_APP_URL;
 
-  // const ogUrl = new URL(`${url}/api/og`)
-  // ogUrl.searchParams.set("heading", post.title)
-  // ogUrl.searchParams.set("type", "Blog Post")
-  // ogUrl.searchParams.set("mode", "dark")
+  const ogUrl = new URL(`${url}/api/og`);
+  ogUrl.searchParams.set('heading', post.title);
+  ogUrl.searchParams.set('type', 'Blog Post');
+  ogUrl.searchParams.set('mode', 'dark');
 
   return {
     title: post.title,
@@ -42,10 +46,10 @@ export async function generateMetadata({
       title: post.title,
       description: post.description,
       type: 'article',
-      // url: absoluteUrl(post.slug),
+      url: absoluteUrl(post.slug),
       images: [
         {
-          url: 'http://localhost:3000/',
+          url: ogUrl.toString(),
           width: 1200,
           height: 630,
           alt: post.title,
@@ -56,7 +60,7 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title: post.title,
       description: post.description,
-      images: ['http://localhost:3000/'],
+      images: [ogUrl.toString()],
     },
   };
 }
