@@ -3,6 +3,11 @@ import { notFound } from 'next/navigation';
 import { allPosts } from 'contentlayer/generated';
 import { Metadata } from 'next';
 import { absoluteUrl } from '@/helpers/Utils';
+import styles from './blog-detail.module.css';
+import { DateHelper } from '@/helpers/DateHelper';
+import Image from 'next/image';
+import { Mdx } from '@/components/mdx/mdx';
+
 interface BlogDetailPageProps {
   params: {
     slug: string;
@@ -76,6 +81,32 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
   if (!post) {
     notFound();
   }
+  console.log('debug-issue', post);
 
-  return <div>BlogDetailPage</div>;
+  return (
+    <article>
+      <div className={styles.container}>
+        <div className={styles.post_title}>
+          <span>{post.title}</span>
+          {post.date && (
+            <time dateTime={post.date} className={styles.post_date}>
+              {DateHelper.formatDate(post.date)}
+            </time>
+          )}
+        </div>
+        <div className={styles.post_image}>
+          {post.image && (
+            <Image
+              src={post.image}
+              alt={post.title}
+              fill
+              priority
+              className={styles.image}
+            />
+          )}
+        </div>
+        {/* <Mdx code={post.body.code} /> */}
+      </div>
+    </article>
+  );
 }

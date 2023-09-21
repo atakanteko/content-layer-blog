@@ -24,6 +24,7 @@
   --bg-box: #fff;
   --bg-box-text: #111;
   --logo-color: #fff;
+  --border-color: #1d283a;
 }
 
 .light {
@@ -36,6 +37,7 @@
   --bg-box: #111;
   --bg-box-text: #fff;
   --logo-color: #111;
+  --border-color: #111;
 }
 
 body {
