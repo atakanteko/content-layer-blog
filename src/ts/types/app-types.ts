@@ -6,4 +6,4 @@ export interface ISystemState {
     [SystemKeysEnum.THEME]: ThemeType;
 }
 
-export type SystemKeyTypes =SystemKeysEnum.THEME
+export type SystemKeyTypes = SystemKeysEnum.THEME

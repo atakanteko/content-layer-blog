@@ -9,8 +9,8 @@ import { DateHelper } from '@/helpers/DateHelper';
 const FeaturedCard = ({ thirdItem }: { thirdItem: Partial<PostType> }) => {
   return (
     <div className={styles.featured_card}>
-      {thirdItem.tags?.map((tag) => (
-        <CategoryTag key={tag._id} tag={tag.title} bgColor="#4b6bfb" />
+      {thirdItem.tags?.map((tag, index) => (
+        <CategoryTag key={index} tag={tag.title} bgColor="#4b6bfb" />
       ))}
 
       <h2 className={styles.title}>{thirdItem.title}</h2>

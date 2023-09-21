@@ -14,8 +14,8 @@ const PostCard = ({ post }: { post: Partial<PostType> }) => {
             <span className={styles.date}>
               {DateHelper.formatDate(post.date!)}
             </span>
-            {post.tags?.map((tag) => (
-              <span className={styles.tag} key={tag._id}>
+            {post.tags?.map((tag, index) => (
+              <span className={styles.tag} key={index}>
                 {tag.title}
               </span>
             ))}

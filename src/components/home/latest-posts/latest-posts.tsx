@@ -41,8 +41,8 @@ const LatestPosts = ({ allPosts }: { allPosts: PostType[] }) => {
         <h3>En son eklenen yazılar</h3>
       </div>
       <div className={styles.container}>
-        {allPosts.map((post) => (
-          <PostCard key={post._id} post={post} />
+        {allPosts.map((post, index) => (
+          <PostCard key={index} post={post} />
         ))}
       </div>
     </>

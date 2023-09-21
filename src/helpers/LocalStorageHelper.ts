@@ -1,21 +1,31 @@
-import { LocalStorageEnum } from "@/ts/enums/app-enums";
+import { LocalStorageEnum, ThemeTypeEnum } from "@/ts/enums/app-enums";
 import { ISystemState } from "@/ts/types/app-types";
+import { defaultSystemConfig } from "./SystemHelper";
 
 const setLocalStorageItem = <T>(key: LocalStorageEnum, value: T): void => {
-    return localStorage.setItem(key, JSON.stringify(value));
+    if (typeof window !== 'undefined') {
+        localStorage.setItem(key, JSON.stringify(value));
+    }
 };
 
 const getLocalStorageItem = (key: LocalStorageEnum): ISystemState => {
-    const data = localStorage.getItem(key);
-    return data !== null ? JSON.parse(data) : null;
+    if (typeof window !== 'undefined') {
+        const data = localStorage.getItem(key);
+        return data !== null ? JSON.parse(data) : null;
+    }
+    return defaultSystemConfig;
 };
 
 const deleteLocalStorageItem = (key: LocalStorageEnum) => {
-    return localStorage.removeItem(key);
+    if (typeof window !== 'undefined') {
+        localStorage.removeItem(key);
+    }
 };
 
 const clearItems = (keys: LocalStorageEnum[]): void => {
-    keys.forEach((key) => deleteLocalStorageItem(key));
+    if (typeof window !== 'undefined') {
+        keys.forEach((key) => deleteLocalStorageItem(key));
+    }
 };
 
 export const LocalStorageHelper = {
@@ -24,4 +34,3 @@ export const LocalStorageHelper = {
     deleteLocalStorageItem,
     clearItems,
 };
-

@@ -2,14 +2,11 @@ import React from 'react';
 import { notFound } from 'next/navigation';
 import { allPosts } from 'contentlayer/generated';
 import { Metadata } from 'next';
+import { absoluteUrl } from '@/helpers/Utils';
 interface BlogDetailPageProps {
   params: {
     slug: string;
   };
-}
-
-export function absoluteUrl(path: string) {
-  return `${process.env.NEXT_PUBLIC_APP_URL}${path}`;
 }
 
 async function getPostFromParams(params: { slug: string }) {
