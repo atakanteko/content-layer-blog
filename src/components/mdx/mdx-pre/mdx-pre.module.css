@@ -1,11 +1,13 @@
 .mdx_pre {
-  border-radius: 8px;
   margin-bottom: 16px;
   margin-top: 24px;
-  overflow-x: auto;
+  border-radius: 8px;
   border: 1px solid var(--code-border-color);
   padding: 16px 8px 16px 8px;
   background-color: #111;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow: auto;
 }
 
 .mdx_pre code {
