@@ -5,14 +5,14 @@ import CategoryTag from '@/components/category-tag/category-tag';
 import styles from './featured.module.css';
 import { PostType } from '../latest-posts/latest-posts';
 import { DateHelper } from '@/helpers/DateHelper';
+import Link from 'next/link';
 
 const FeaturedCard = ({ thirdItem }: { thirdItem: Partial<PostType> }) => {
   return (
-    <div className={styles.featured_card}>
+    <Link href={thirdItem.slug!} className={styles.featured_card}>
       {thirdItem.tags?.map((tag, index) => (
         <CategoryTag key={index} tag={tag.title} bgColor="#4b6bfb" />
       ))}
-
       <h2 className={styles.title}>{thirdItem.title}</h2>
       <div className={styles.featured_card_info}>
         <div className={styles.author}>
@@ -23,7 +23,7 @@ const FeaturedCard = ({ thirdItem }: { thirdItem: Partial<PostType> }) => {
           {DateHelper.formatDate(thirdItem.date!)}
         </span>
       </div>
-    </div>
+    </Link>
   );
 };
 

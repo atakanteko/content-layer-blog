@@ -105,7 +105,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
             />
           )}
         </div>
-        {/* <Mdx code={post.body.code} /> */}
+        <Mdx code={post.body.code} />
       </div>
     </article>
   );

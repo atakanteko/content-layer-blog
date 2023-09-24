@@ -1,0 +1,7 @@
+.mdx_p {
+  line-height: 28px;
+}
+
+.mdx_p:not(:first-child) {
+  margin-top: 24px;
+}

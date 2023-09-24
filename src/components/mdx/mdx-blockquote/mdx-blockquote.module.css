@@ -1,0 +1,7 @@
+.mdx_blockquote {
+  color: var(--blockquote-txt-color);
+  margin-top: 24px;
+  border-left: 2px solid var(--blockquote-txt-color);
+  padding-left: 24px;
+  font-style: italic;
+}

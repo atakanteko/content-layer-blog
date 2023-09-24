@@ -3,6 +3,7 @@ import styles from './featured.module.css';
 import Image from 'next/image';
 import FeaturedCard from './featured-card';
 import { PostType } from '../latest-posts/latest-posts';
+import Link from 'next/link';
 
 const Featured = ({ posts }: { posts: PostType[] }) => {
   const thirdItem = posts[2];
