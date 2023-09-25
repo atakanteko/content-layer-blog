@@ -5,30 +5,43 @@ import MdxP from './mdx-p/mdx-p';
 import MdxPre from './mdx-pre/mdx-pre';
 import MdxBlockquote from './mdx-blockquote/mdx-blockquote';
 import MdxCode from './mdx-code/mdx-code';
+import MdxH1 from './mdx-h/mdx-h1';
+import MdxH2 from './mdx-h/mdx-h2';
+import MdxH3 from './mdx-h/mdx-h3';
+import MdxH4 from './mdx-h/mdx-h4';
+import MdxH5 from './mdx-h/mdx-h5';
+import MdxH6 from './mdx-h/mdx-h6';
+import MdxA from './mdx-a/mdx-a';
+import MdxHr from './mdx-hr/mdx-hr';
+import MdxOl from './mdx-list/mdx-ol';
+import MdxUl from './mdx-list/mdx-ul';
+import MdxLi from './mdx-list/mdx-li';
 interface MdxProps {
   code: string;
 }
 
 const components = {
-  h1: ({ ...props }) => <h1 {...props} />,
-  h2: ({ ...props }) => <h2 {...props} />,
-  h3: ({ ...props }) => <h3 {...props} />,
-  h4: ({ ...props }) => <h4 {...props} />,
-  h5: ({ ...props }) => <h5 {...props} />,
-  h6: ({ ...props }) => <h6 {...props} />,
-  a: ({ ...props }) => <a {...props} />,
+  h1: ({ ...props }) => <MdxH1 {...props} />,
+  h2: ({ ...props }) => <MdxH2 {...props} />,
+  h3: ({ ...props }) => <MdxH3 {...props} />,
+  h4: ({ ...props }) => <MdxH4 {...props} />,
+  h5: ({ ...props }) => <MdxH5 {...props} />,
+  h6: ({ ...props }) => <MdxH6 {...props} />,
   p: ({ ...props }) => <MdxP {...props} />,
-  ul: ({ ...props }) => <ul {...props} />,
-  ol: ({ ...props }) => <ol {...props} />,
-  li: ({ ...props }) => <li {...props} />,
   pre: ({ ...props }) => <MdxPre {...props} />,
   code: ({ ...props }) => <MdxCode {...props} />,
   blockquote: ({ ...props }) => <MdxBlockquote {...props} />,
+  a: ({ ...props }) => <MdxA {...props} />,
+  hr: ({ ...props }) => <MdxHr {...props} />,
+  ol: ({ ...props }) => <MdxOl {...props} />,
+  ul: ({ ...props }) => <MdxUl {...props} />,
+  li: ({ ...props }) => <MdxLi {...props} />,
+
   img: ({ alt, ...props }: React.ImgHTMLAttributes<HTMLImageElement>) => (
     // eslint-disable-next-line @next/next/no-img-element
     <img alt={alt} {...props} />
   ),
-  hr: ({ ...props }) => <hr {...props} />,
+
   table: ({ ...props }: React.HTMLAttributes<HTMLTableElement>) => (
     <div>
       <table {...props} />

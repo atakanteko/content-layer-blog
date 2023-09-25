@@ -1,0 +1,47 @@
+.mdx_h1 {
+  font-weight: bold;
+  font-size: 2.25rem;
+  scroll-margin: 5rem;
+  margin-top: 8px;
+}
+
+.mdx_h2 {
+  margin-top: 40px;
+  scroll-margin: 5rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 500;
+}
+
+.mdx_h3 {
+  margin-top: 32px;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 500;
+  scroll-margin: 5rem;
+}
+
+.mdx_h4 {
+  margin-top: 32px;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+  scroll-margin: 5rem;
+  font-weight: 500;
+}
+
+.mdx_h5 {
+  margin-top: 32px;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  scroll-margin: 5rem;
+  font-weight: 500;
+}
+
+.mdx_h6 {
+  margin-top: 32px;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  scroll-margin: 5rem;
+  font-weight: 500;
+}
