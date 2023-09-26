@@ -16,6 +16,10 @@ import MdxHr from './mdx-hr/mdx-hr';
 import MdxOl from './mdx-list/mdx-ol';
 import MdxUl from './mdx-list/mdx-ul';
 import MdxLi from './mdx-list/mdx-li';
+import MdxTable from './mdx-table/mdx-table';
+import MdxTr from './mdx-table/mdx-tr';
+import MdxTh from './mdx-table/mdx-th';
+import MdxTd from './mdx-table/mdx-td';
 interface MdxProps {
   code: string;
 }
@@ -36,22 +40,19 @@ const components = {
   ol: ({ ...props }) => <MdxOl {...props} />,
   ul: ({ ...props }) => <MdxUl {...props} />,
   li: ({ ...props }) => <MdxLi {...props} />,
+  table: ({ ...props }: React.HTMLAttributes<HTMLTableElement>) => (
+    <MdxTable {...props} />
+  ),
+  tr: ({ ...props }: React.HTMLAttributes<HTMLTableRowElement>) => (
+    <MdxTr {...props} />
+  ),
+  th: ({ ...props }) => <MdxTh {...props} />,
+  td: ({ ...props }) => <MdxTd {...props} />,
 
   img: ({ alt, ...props }: React.ImgHTMLAttributes<HTMLImageElement>) => (
     // eslint-disable-next-line @next/next/no-img-element
     <img alt={alt} {...props} />
   ),
-
-  table: ({ ...props }: React.HTMLAttributes<HTMLTableElement>) => (
-    <div>
-      <table {...props} />
-    </div>
-  ),
-  tr: ({ ...props }: React.HTMLAttributes<HTMLTableRowElement>) => (
-    <tr {...props} />
-  ),
-  th: ({ ...props }) => <th {...props} />,
-  td: ({ ...props }) => <td {...props} />,
 
   Image,
   // Callout,

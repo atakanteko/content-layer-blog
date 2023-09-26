@@ -1,0 +1,32 @@
+.mdx_table_container {
+  width: 100%;
+  overflow-y: auto;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.mdx_table {
+  width: 100%;
+}
+
+.mdx_tr {
+  margin: 0;
+  padding: 0;
+}
+
+.mdx_tr:nth-child(even) {
+  background-color: var(--table-tr-bg);
+}
+
+.mdx_th {
+  border: 1px solid var(--table-border-color);
+  padding: 0.25rem 1rem;
+  text-align: left;
+  font-weight: bold;
+}
+
+.mdx_td {
+  border: 1px solid var(--table-border-color);
+  padding: 0.25rem 1rem;
+  text-align: left;
+}

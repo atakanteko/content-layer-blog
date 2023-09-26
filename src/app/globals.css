@@ -31,6 +31,8 @@
   /* mdx-variables */
   --blockquote-txt-color: #d3d4d6;
   --code-border-color: #21314c;
+  --table-tr-bg: #0f1629;
+  --table-border-color: #25344e;
 }
 
 .light {
@@ -47,6 +49,8 @@
   /* mdx-variables */
   --blockquote-txt-color: #6c7582;
   --code-border-color: #bbc9d6;
+  --table-tr-bg: #f1f5f9;
+  --table-border-color: #c5d6e7;
 }
 
 body {
