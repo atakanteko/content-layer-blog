@@ -1,5 +1,5 @@
 import { useMDXComponent } from 'next-contentlayer/hooks';
-import styles from './mdx.module.css';
+import NextImage, { ImageProps } from 'next/image';
 import Image from 'next/image';
 import MdxP from './mdx-p/mdx-p';
 import MdxPre from './mdx-pre/mdx-pre';
@@ -20,6 +20,7 @@ import MdxTable from './mdx-table/mdx-table';
 import MdxTr from './mdx-table/mdx-tr';
 import MdxTh from './mdx-table/mdx-th';
 import MdxTd from './mdx-table/mdx-td';
+
 interface MdxProps {
   code: string;
 }
@@ -51,10 +52,21 @@ const components = {
 
   img: ({ alt, ...props }: React.ImgHTMLAttributes<HTMLImageElement>) => (
     // eslint-disable-next-line @next/next/no-img-element
-    <img alt={alt} {...props} />
+    <img style={{}} alt={alt} {...props} />
   ),
 
-  Image,
+  Image: (props: ImageProps) => (
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        marginTop: '14px',
+        marginBottom: '14px',
+      }}
+    >
+      <NextImage {...props} />
+    </div>
+  ),
   // Callout,
 };
 
