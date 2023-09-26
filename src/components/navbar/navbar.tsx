@@ -3,7 +3,6 @@ import styles from './navbar.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import NavigateLink from '../navigate-link/navigate-link';
-import { NavbarContainer } from './container';
 import ThemeToggle from '../theme-toggle/theme-toggle';
 
 const Navbar = () => {
