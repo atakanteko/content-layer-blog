@@ -81,7 +81,6 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
   if (!post) {
     notFound();
   }
-  console.log('debug-issue', post);
 
   return (
     <article>

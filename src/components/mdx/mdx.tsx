@@ -64,7 +64,11 @@ const components = {
         marginBottom: '14px',
       }}
     >
-      <NextImage {...props} />
+      <NextImage
+        layout="responsive"
+        style={{ maxWidth: '718px', height: '404px' }}
+        {...props}
+      />
     </div>
   ),
   // Callout,
