@@ -33,6 +33,7 @@
   --code-border-color: #21314c;
   --table-tr-bg: #0f1629;
   --table-border-color: #25344e;
+  --footer-bg-border: #242535;
 }
 
 .light {
@@ -51,6 +52,7 @@
   --code-border-color: #bbc9d6;
   --table-tr-bg: #f1f5f9;
   --table-border-color: #c5d6e7;
+  --footer-bg-border: #f6f6f7;
 }
 
 body {

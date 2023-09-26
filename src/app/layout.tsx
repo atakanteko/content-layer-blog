@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { Work_Sans } from 'next/font/google';
 import { ThemeContextProvider } from '@/context/ThemeContext';
 import ThemeProvider from '@/components/providers/ThemeProvider';
+import Footer from '@/components/footer/footer';
 
 const inter = Work_Sans({ subsets: ['latin'] });
 
@@ -26,6 +27,7 @@ export default function RootLayout({
             <div className="container">
               <Navbar />
               <div className="wrapper">{children}</div>
+              <Footer />
             </div>
           </ThemeProvider>
         </ThemeContextProvider>

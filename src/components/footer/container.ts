@@ -19,6 +19,6 @@ const socialLinks = [
     }
 ]
 
-export const NavbarContainer = {
+export const FooterContainer = {
     socialLinks
 }
