@@ -5,6 +5,7 @@
   font-weight: 900;
   line-height: 112px; /* 88.889% */
   letter-spacing: -2.172px;
+  max-width: 700px;
 }
 
 .title h4 {
@@ -36,17 +37,198 @@
   line-height: 34px; /* 170% */
 }
 
+/* experience.tsx */
+.experience {
+  margin-top: 66px;
+}
+
+.experience h3.title {
+  margin-bottom: 16px;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 46px; /* 127.778% */
+}
+
+.experience_card:not(:last-child) {
+  margin-bottom: 66px;
+}
+
+.experience_card .header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.experience_card .header h5 {
+  color: #9e8c6c;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 133.333% */
+  letter-spacing: 1px;
+  text-transform: capitalize;
+}
+.experience_card .header span {
+  color: #73808d;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 133.333% */
+}
+
+.experience .work_description {
+  margin-top: 10px;
+}
+
+.experience .work_description p {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 34px; /* 170% */
+}
+
+/* education.tsx */
+.education {
+  margin-top: 66px;
+}
+
+.education h3 {
+  margin-bottom: 16px;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 46px; /* 127.778% */
+}
+
+.education span {
+  color: #73808d;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 133.333% */
+}
+
+.education h5 {
+  color: #9e8c6c;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 133.333% */
+  letter-spacing: 1px;
+  text-transform: capitalize;
+}
+
 /* RIGHT */
-.img_container {
-  width: 112px;
-  height: 112px;
+.profile {
+  display: flex;
+  flex-direction: column;
+}
+.profile .img_container {
+  width: 210px;
+  height: 210px;
   position: relative;
 }
 
+.profile .info {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px; /* 163.636% */
+}
+
 .img {
-  border-radius: 72px;
+  /* border-radius: 72px; */
   object-fit: cover;
 }
 
+/* tools.tsx */
+.tools {
+  margin-top: 20px;
+}
+
+.tools h5 {
+  color: #9e8c6c;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 133.333% */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.tools span {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px; /* 170% */
+}
 @media screen and (max-width: 1440px) {
+}
+
+@media screen and (max-width: 640px) {
+  /* title.tsx */
+  .title h2 {
+    font-size: 62px;
+    font-weight: 600;
+    max-width: 700px;
+    line-height: 58px; /* 88.889% */
+  }
+
+  /* about-me.tsx */
+  .about_me {
+    margin-top: 33px;
+  }
+
+  .about_me h2 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 46px;
+  }
+
+  .about_me p {
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  /* experience.tsx */
+  .experience {
+    margin-top: 33px;
+  }
+  .experience h3.title {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 46px;
+  }
+
+  .experience_card .header h5 {
+    font-size: 16px;
+  }
+  .experience_card .header span {
+    font-size: 16px;
+  }
+
+  .experience .work_description p {
+    font-size: 16px;
+    line-height: 28px;
+  }
+  /* education.tsx */
+  .education {
+    margin-top: 33px;
+  }
+
+  .education h3 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 46px;
+  }
+  .education h5 {
+    font-size: 16px;
+  }
+  .education span {
+    font-size: 16px;
+  }
 }
