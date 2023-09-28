@@ -127,6 +127,7 @@
   }
 
   .post_frame {
+    min-height: 140px;
     flex-direction: column;
   }
 
@@ -134,6 +135,7 @@
     display: none;
   }
   .post_title {
+    font-size: 18px;
     margin-bottom: 0;
   }
   .footer {
