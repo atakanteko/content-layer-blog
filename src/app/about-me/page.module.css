@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  gap: 120px;
+}
+
+.left {
+  flex: 3.9;
+}
+
+.right {
+  flex: 1;
+}
+
+.img_container {
+  width: 112px;
+  height: 112px;
+  position: relative;
+}
+
+.img {
+  border-radius: 72px;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 1440px) {
+  .left {
+    flex: 2.85;
+  }
+
+  .right {
+    flex: 1;
+  }
+}
