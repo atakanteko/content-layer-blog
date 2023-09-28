@@ -1,5 +1,6 @@
 .container {
   background: var(--bg);
+  margin-top: 20px;
   border-top: 1px solid var(--footer-bg-border);
 }
 

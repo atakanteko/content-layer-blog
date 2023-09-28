@@ -19,6 +19,20 @@ const socialLinks = [
     }
 ]
 
-export const FooterContainer = {
-    socialLinks
+const siteRoutes = [
+    {
+        id: 0,
+        route: "Hakkımda",
+        link: "/about-me"
+    },
+    {
+        id: 1,
+        route: "İletişim",
+        link: "/contact"
+    }
+]
+
+export const ComponentsContainer = {
+    socialLinks,
+    siteRoutes
 }

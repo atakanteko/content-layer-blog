@@ -4,6 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import NavigateLink from '../navigate-link/navigate-link';
 import ThemeToggle from '../theme-toggle/theme-toggle';
+import { ComponentsContainer } from '../container';
+import LinkIndicator from '../link-indicator/link-indicator';
 
 const Navbar = () => {
   return (
@@ -21,6 +23,14 @@ const Navbar = () => {
           </Link>
         </div>
         <div className={styles.right}>
+          <div className={styles.routes}>
+            {ComponentsContainer.siteRoutes.map((item) => (
+              <LinkIndicator key={item.id} href={item.link}>
+                {item.route}
+              </LinkIndicator>
+            ))}
+          </div>
+
           <div className={styles.hamburger}>
             <Image
               src="/images/icons/hamburger-icon.svg"

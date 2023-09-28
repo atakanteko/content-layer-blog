@@ -1,8 +1,6 @@
 import React from 'react';
 import styles from './footer.module.css';
 import Image from 'next/image';
-import { FooterContainer } from './container';
-import NavigateLink from '../navigate-link/navigate-link';
 
 const Footer = () => {
   return (
