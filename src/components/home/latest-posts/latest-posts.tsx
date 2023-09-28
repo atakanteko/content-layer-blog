@@ -3,6 +3,7 @@ import styles from './latest-posts.module.css';
 import PostCard from '@/components/common/post-card/post-card';
 import * as Local from 'contentlayer/source-files';
 import type { MDX, IsoDateTimeString } from 'contentlayer/core';
+import PostCardMini from '@/components/common/post-card-mini/post-card-mini';
 
 /** Nested types */
 export type Tag = {
@@ -42,7 +43,8 @@ const LatestPosts = ({ allPosts }: { allPosts: PostType[] }) => {
       </div>
       <div className={styles.container}>
         {allPosts.map((post, index) => (
-          <PostCard key={index} post={post} />
+          // <PostCard key={index} post={post} />
+          <PostCardMini key={index} post={post} />
         ))}
       </div>
     </>

@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <Hero posts={posts} />
-      <Featured posts={posts} />
+      {/* <Featured posts={posts} /> */}
       {posts?.length ? (
         <LatestPosts allPosts={posts} />
       ) : (

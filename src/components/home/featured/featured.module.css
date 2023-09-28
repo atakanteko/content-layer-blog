@@ -67,22 +67,26 @@
   }
 
   .featured_card {
-    grid-area: 10 / 1 / 20 / 12;
+    margin-left: 24px;
+    width: max-content;
+    background-color: #fff !important;
+    grid-area: 12 / 1 / 20 / 12;
     background-color: transparent;
     box-shadow: unset;
     border: unset;
-    padding: 40px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
   }
 
   .title {
-    color: #fff;
+    color: #181a2a;
   }
 
   .featured_card_info {
-    color: #fff;
+    color: #181a2a;
+
     margin-bottom: 20px;
   }
 }

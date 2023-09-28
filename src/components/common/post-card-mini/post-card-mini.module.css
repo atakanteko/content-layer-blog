@@ -1,0 +1,142 @@
+.post_card {
+  width: 392px;
+}
+
+.post_frame {
+  cursor: pointer;
+  overflow: hidden;
+  height: 100%;
+  border-radius: 12px;
+  border: 1px solid #e8e8ea;
+  background: #fff;
+  width: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.img_container {
+  position: relative;
+  width: 358px;
+  min-height: 240px;
+}
+
+.post_card_img {
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.text_container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  color: #111;
+}
+
+.tag {
+  width: max-content;
+  border-radius: 6px;
+  background: rgba(75, 107, 251, 0.05);
+  display: flex;
+  padding: 4px 10px;
+  justify-content: center;
+  align-items: center;
+  color: #4b6bfb;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.post_text {
+  margin-top: 16px;
+  height: 100%;
+}
+
+.post_title {
+  color: #181a2a;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  margin-bottom: 10px;
+}
+
+.footer {
+  margin-top: 16px;
+  align-self: flex-end;
+}
+
+.date {
+  color: #667085;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 15.6px */
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 1440px) {
+  .post_frame {
+    flex-direction: row;
+  }
+  .text_container {
+    flex: 2;
+  }
+  .img_container {
+    flex: 1.5;
+    position: relative;
+    min-height: 210px;
+  }
+  .tag {
+    font-size: 16px;
+  }
+
+  .post_title {
+    font-size: 32px;
+    font-weight: 600;
+  }
+
+  .date {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .tag {
+    font-size: 14px;
+  }
+
+  .post_title {
+    font-size: 26px;
+    font-weight: 600;
+  }
+
+  .date {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .post_card {
+    width: auto;
+  }
+
+  .post_frame {
+    flex-direction: column;
+  }
+
+  .img_container {
+    display: none;
+  }
+  .post_title {
+    margin-bottom: 0;
+  }
+  .footer {
+    margin-top: 0;
+  }
+}
