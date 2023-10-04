@@ -1,7 +1,4 @@
 'use client';
-
-'use client';
-
 import React from 'react';
 import styles from './theme-toggle.module.css';
 import { useThemeContext } from '@/hooks/useThemeContext';
@@ -10,6 +7,7 @@ import { ThemeTypeEnum } from '@/ts/enums/app-enums';
 
 const ThemeToggle = () => {
   const themeCtx = useThemeContext();
+
   return (
     <div
       onClick={() => themeCtx.toggleTheme()}

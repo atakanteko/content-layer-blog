@@ -5,6 +5,9 @@ import { Work_Sans } from 'next/font/google';
 import { ThemeContextProvider } from '@/context/ThemeContext';
 import ThemeProvider from '@/components/providers/ThemeProvider';
 import Footer from '@/components/footer/footer';
+import StyledComponentsRegistry from '@/helpers/AntdRegistry';
+import { ConfigProvider } from 'antd';
+import theme from '@/theme/themeConfig';
 
 const inter = Work_Sans({ subsets: ['latin'] });
 
@@ -22,15 +25,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ThemeContextProvider>
-          <ThemeProvider>
-            <div className="container">
-              <Navbar />
-              <div className="wrapper">{children}</div>
-              <Footer />
-            </div>
-          </ThemeProvider>
-        </ThemeContextProvider>
+        <StyledComponentsRegistry>
+          <ConfigProvider theme={theme}>
+            <ThemeContextProvider>
+              <ThemeProvider>
+                <div className="container">
+                  <Navbar />
+                  <div className="wrapper">{children}</div>
+                  <Footer />
+                </div>
+              </ThemeProvider>
+            </ThemeContextProvider>
+          </ConfigProvider>
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
