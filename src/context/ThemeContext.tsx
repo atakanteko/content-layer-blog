@@ -43,6 +43,8 @@ export const ThemeContextProvider = ({
   };
 
   React.useEffect(() => {
+    console.log('debug-issue', theme);
+
     SystemHelper.updateSystemConfig(SystemKeysEnum.THEME, theme);
   }, [theme]);
 
