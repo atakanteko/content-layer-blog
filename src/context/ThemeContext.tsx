@@ -13,6 +13,8 @@ import React, { createContext } from 'react';
 export interface IThemeContextType {
   theme: string;
   toggleTheme: () => void;
+  toggleMobileMenu: () => void;
+  isMobileMenuOpen: boolean;
 }
 
 const getThemeTypeFromLocalStorage = () => {
@@ -36,20 +38,27 @@ export const ThemeContextProvider = ({
     return getThemeTypeFromLocalStorage();
   });
 
+  const [isMobileMenuOpen, setIsMobileMenuOpen] =
+    React.useState<boolean>(false);
+
   const toggleTheme = () => {
     setTheme(
       theme === ThemeTypeEnum.LIGHT ? ThemeTypeEnum.DARK : ThemeTypeEnum.LIGHT
     );
   };
 
-  React.useEffect(() => {
-    console.log('debug-issue', theme);
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
 
+  React.useEffect(() => {
     SystemHelper.updateSystemConfig(SystemKeysEnum.THEME, theme);
   }, [theme]);
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider
+      value={{ theme, toggleTheme, isMobileMenuOpen, toggleMobileMenu }}
+    >
       {children}
     </ThemeContext.Provider>
   );

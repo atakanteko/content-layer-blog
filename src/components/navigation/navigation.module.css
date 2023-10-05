@@ -1,0 +1,26 @@
+.routes {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.links {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .route_wrapper {
+    display: none;
+  }
+  .routes {
+    flex-direction: column;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 640px) {
+}

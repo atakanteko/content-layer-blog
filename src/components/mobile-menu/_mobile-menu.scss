@@ -1,0 +1,37 @@
+.ant-drawer {
+    .ant-drawer-mask {
+        background: rgba(0, 0, 0, 0.85) !important;
+    }
+
+    .ant-drawer-content-wrapper {
+        .custom-drawer {
+            .ant-drawer-wrapper-body {
+                .ant-drawer-header {
+                    border-bottom: unset !important;
+
+                    .ant-drawer-header-title {
+                        .ant-drawer-title {
+                            display: flex;
+                            justify-content: flex-end;
+                        }
+
+
+                        button {
+                            svg {
+                                scale: 1.8 !important;
+                            }
+                        }
+                    }
+
+                }
+
+                .ant-drawer-body {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}

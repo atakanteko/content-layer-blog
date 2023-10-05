@@ -8,3 +8,15 @@
 .active_link {
   color: #ff5480;
 }
+
+@media screen and (max-width: 768px) {
+  .link_item {
+    font-size: 2.6rem;
+    font-weight: 600;
+    text-transform: none;
+    color: #000;
+  }
+  .active_link {
+    color: #ff5480 !important;
+  }
+}

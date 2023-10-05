@@ -1,0 +1,9 @@
+.custom-switch {
+    &.ant-switch {
+        background-color: #e03a6f !important;
+    }
+
+    &.ant-switch-checked {
+        background-color: #77c3ed !important;
+    }
+}

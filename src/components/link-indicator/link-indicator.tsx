@@ -11,7 +11,8 @@ type Props = Omit<ComponentProps<typeof Link>, 'href'> & {
 
 const LinkIndicator = ({ href, ...rest }: Props) => {
   const pathname = usePathname();
-  const isActive = pathname === href && pathname !== '/';
+  const isActive = pathname === href;
+
   return (
     <Link
       aria-current={isActive}

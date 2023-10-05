@@ -1,37 +1,28 @@
+'use client';
+
 import React from 'react';
 import styles from './navbar.module.css';
 import Image from 'next/image';
-import Link from 'next/link';
-import NavigateLink from '../navigate-link/navigate-link';
 import ThemeToggle from '../theme-toggle/theme-toggle';
-import { ComponentsContainer } from '../container';
-import LinkIndicator from '../link-indicator/link-indicator';
+import MobileMenu from '../mobile-menu/mobile-menu';
+import { useThemeContext } from '@/hooks/useThemeContext';
+import Navigation from '../navigation/navigation';
+import NavItems from '../navigation/nav-items';
+import Logo from './logo';
 
 const Navbar = () => {
+  const themeCtx = useThemeContext();
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-        <div className={styles.logo}>
-          <Link href="/" className={styles.logo_link}>
-            <Image
-              src="/images/navbar/logo.svg"
-              width={32}
-              height={32}
-              alt="logo"
-            />
-            <h2 className={styles.logo_text}>bytebadger</h2>
-          </Link>
+        <div className={styles.left}>
+          <Logo />
         </div>
         <div className={styles.right}>
-          <div className={styles.routes}>
-            {ComponentsContainer.siteRoutes.map((item) => (
-              <LinkIndicator key={item.id} href={item.link}>
-                {item.route}
-              </LinkIndicator>
-            ))}
-          </div>
-
-          <div className={styles.hamburger}>
+          <Navigation>
+            <NavItems />
+          </Navigation>
+          <div className={styles.hamburger} onClick={themeCtx.toggleMobileMenu}>
             <Image
               src="/images/icons/hamburger-icon.svg"
               alt=""
@@ -40,7 +31,7 @@ const Navbar = () => {
               className={styles.hamburger_icon}
             />
           </div>
-
+          <MobileMenu />
           <ThemeToggle />
         </div>
       </div>

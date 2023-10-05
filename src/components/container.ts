@@ -22,11 +22,16 @@ const socialLinks = [
 const siteRoutes = [
     {
         id: 0,
+        route: "Anasayfa",
+        link: "/"
+    },
+    {
+        id: 1,
         route: "Hakkımda",
         link: "/about-me"
     },
     {
-        id: 1,
+        id: 2,
         route: "İletişim",
         link: "/contact"
     }

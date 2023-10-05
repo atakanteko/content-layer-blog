@@ -1,5 +1,6 @@
 import Navbar from '@/components/navbar/navbar';
 import './globals.css';
+import './_globals.scss';
 import type { Metadata } from 'next';
 import { Work_Sans } from 'next/font/google';
 import { ThemeContextProvider } from '@/context/ThemeContext';
