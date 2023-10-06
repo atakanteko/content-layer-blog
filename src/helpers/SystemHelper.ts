@@ -3,7 +3,7 @@ import { LocalStorageHelper } from "./LocalStorageHelper";
 import { ISystemState, SystemKeyTypes } from "@/ts/types/app-types";
 
 export const defaultSystemConfig: ISystemState = {
-    [SystemKeysEnum.THEME]: ThemeTypeEnum.DARK,
+    [SystemKeysEnum.THEME]: ThemeTypeEnum.LIGHT,
 };
 
 export const updateSystemConfig = (key: SystemKeyTypes, value: string | number) => {

@@ -24,7 +24,7 @@ const getThemeTypeFromLocalStorage = () => {
     )?.theme;
     return value || ThemeTypeEnum.LIGHT;
   }
-  return ThemeTypeEnum.DARK;
+  return ThemeTypeEnum.LIGHT;
 };
 
 export const ThemeContext = createContext<IThemeContextType | null>(null);

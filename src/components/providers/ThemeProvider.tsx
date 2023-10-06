@@ -4,7 +4,6 @@ import React from 'react';
 
 const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const themeCtx = useThemeContext();
-
   return <div className={themeCtx.theme}>{children}</div>;
 };
 
