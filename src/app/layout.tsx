@@ -9,6 +9,7 @@ import Footer from '@/components/footer/footer';
 import StyledComponentsRegistry from '@/helpers/AntdRegistry';
 import { ConfigProvider } from 'antd';
 import theme from '@/theme/themeConfig';
+import ContentWrapper from '@/components/content-wrapper/content-wrapper';
 
 const inter = Work_Sans({ subsets: ['latin'] });
 
@@ -32,7 +33,7 @@ export default function RootLayout({
               <ThemeProvider>
                 <div className="container">
                   <Navbar />
-                  <div className="wrapper">{children}</div>
+                  <ContentWrapper>{children}</ContentWrapper>
                   <Footer />
                 </div>
               </ThemeProvider>
