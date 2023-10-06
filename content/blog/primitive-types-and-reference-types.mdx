@@ -1,0 +1,174 @@
+---
+title: JavaScript Primitive Types ve Referans Types Ne Anlama Gelir?
+description: Primitive types ve Reference types nedir ve aralarındaki farklar nelerdir? İnceleyelim.
+image: /images/blog/06-10-23/01.png
+date: '2023-10-06'
+author: 'Atakan Tekoglu'
+tags:
+  - title: JavaScript
+---
+
+Primitive ve Reference tipleri birbirinden ayıran en temel fark reference tiplerin `referans` yöntemi ile depolanıp kopyalanırken primitive tiplerin ise bir `bütün değer` yöntemi ile depolanıp kopyalanmasıdır.
+
+Bu açıklamanın tek başına bir şey ifade etmediği aşikar. İşin aslını öğrenmek ve kafamızda da yer etmesi için biraz derine inmemiz gerekiyor. Ama ilk olarak Primitive tipler neler öğrenelim.
+
+JavaScript dinamik bir programlama dilidir. Dinamik olması belli tiplerin olmadığı manasına gelmemektedir. Belli tipler **primitive types** başlığı altında bizi karşılar.
+
+- Number
+- Boolean
+- String
+- Null
+- Undefined
+- Symbol
+
+Primitive olan bu tiplerin bellekte sabit bir boyutu vardır.
+
+Örneğin bir **number** bellekte 8 bytes yer kaplarken **boolean** bir değişken bir bit yer kaplar.
+
+Yukarıdakiler dışındaki her şey `object` olarak nitelendirilir. Ve **reference** kavramı bu noktada devreye girmektedir. Object tiplerin belli bir büyüklüğü yoktur. Örneğin bir dizi herhangi bir sayıda elemandan oluşabilir. Yada bir fonksiyon herhangi bir satır sayısından oluşan bir JavaScript kod bloğunu içinde barındırabir.
+
+Madem ki barındırılacak kod satır sayısı veya bir dizinin eleman sayısı veya bir objectin üye eleman sayısı belli değil o zaman 8 bytes olan bir veri tipi bizim işimize yaramayacaktır.
+
+Peki işimize yarayacak olan ne? Daha doğrusu primitive types ile object types olan verilerin depolanması ve kopyalanması neye göre değişiyor ki sabit bir büyüklüğe veya göreceli olarak sonsuz bir büyüklüğe sahip olabiliyim?
+
+Bu sorunun cevabını **Stack** ve **Heap** kavramlarını bu konu bağlamadında anlayarak verebiliriz.
+
+## Primitive veri türleri JavaScript'te nasıl işlenir?
+
+JavaScript'te bir primitive veri tanımlaması yaptığımızda bu veri `Stack` içinde depolanır.
+
+Stack ise bilgisayarın verileri hızla depolamak ve almak için kullandığı memory üzerindeki bir veri yapısıdır.
+
+Primitive tipler ve stack arasındaki ilişkiyi konuşalım.
+
+Öncelikle unutmamamız gereken en önemli şey primitive tiplerin veri değerlerine göre kopyalanıp depolandığıdır. Bunu aklımıza yazdığımıza göre bir örnekle ne demek istediğimi açıklayabilirim.
+
+<Image
+  src="/images/blog/06-10-23/02.png"
+  width="718"
+  height="404"
+  alt="Image"
+/>
+
+Görmüş olduğunuz gibi `numberOne` isimli bir değişken tanımlayıp 10 değerini bu değişkene atıyorum.
+
+Ardından bir başka değişken olan `numberTwo` isimli değişkeni tanımlayıp bir önceki değişkenimi buna atıyorum.
+
+**Ben bunları yaparken Stack içinde neler oluyor?**
+
+Bu değişkenlerim madem ki bir primitive type o zaman stack üzerinde tanımlanacaktır.
+
+Stack ilk olarak `numberOne` isimli değişkenime bir oda oluşturur. Bu oda artık bu değişkene tahsis edilmiştir ve kendisine atanan **10 değerini** depolar.
+
+Ardından `numberTwo` isimli değişkenime yine bir oda oluşturur çünkü kendisi bir primitive type. Bu oda içinde depolanacak olan değer ise `numberOne` değişkeninin içindeki değerdir. Bu değer `numberTwo` isimli değişkenin odasına kopyalanır ve depolanır.
+
+Peki aşağıdaki işlemi yapacak olsam nasıl bir sonuç beni bekler?
+
+`numberOne` nı değiştirmem `numberTwo` u etkiler mi?
+
+Tabi ki hayır.
+
+Ne demiştik; madem ki stack üzerinde oluşturulan değişkenler farklı odalara sahip oluyorlar o zaman bir odanın tuttuğu değeri değiştirmek diğerini etkilemez.
+
+```js
+let numberOne = 10;
+let numberTwo = numberOne;
+
+numberOne = 20;
+
+console.log(numberOne); // 20
+console.log(numberTwo); // 10
+```
+
+## JavaScript'te Reference Types
+
+Referans tipler **Heap** üzerinde depolanır. Heap tıpkı Stack gibi memory'nin bir parçasıdır fakat dinamik bellek ayrımı noktasında kullanılır.
+
+- Object
+- Array
+- Function
+
+Bir örnek ile açıklama yapalım.
+
+```js
+let personel = {
+  name: 'Kemal',
+  age: 34,
+};
+
+let person = personel;
+
+person.name = 'Metin';
+
+console.log('personel => ', personel); // {name: 'Metin', age: 34}
+console.log('person => ', person); //{name: 'Metin', age: 34}
+```
+
+Bu örneği açıklarken eşitliğin sağ ve sol tarafını ayrı ayrı konuşmak istiyorum.
+
+```js
+let personel = {
+  name: 'Kemal',
+  age: 34,
+};
+```
+
+Burada eşitliğin sağ tarafında oluşturduğumuz verinin tipi `object` yani referans tipli bir veri tipi. Madem ki öyle, eşitliğimin sol tarafı bu objecte ait olan heap'te oluşacak olan referansı tutacaktır.
+
+Referans denilen şey ne peki?
+
+Bellekte heap alanında o objenin bulunduğu odanın adresinden başka bir şey değil.
+
+Demek ki referans tipli bir tanımlama yapıldığı zaman bize dönen şey o objenin bellek adresidir.
+
+O zaman **personel** değişkenim artık bir adrese referans eden bir değişken haline geliyor.
+
+**personel degişkeni ise stack içinde bu adresi tutar halde bizim kullanımımız için yaratılır.**
+
+Aşağıdaki görseli inceleyelim.
+
+<Image
+  src="/images/blog/06-10-23/03.png"
+  width="718"
+  height="404"
+  alt="Image"
+/>
+
+Bu örnekte de görmüş olduğumuz gibi her iki object heap alanında depolandı ve adresler ilgili değişkenlere atanmış oldu.
+
+#### Referans tipli bir veriyi kopyaladığımızda ne olur?
+
+```js
+let personel = {
+  name: 'Kemal',
+  age: 34,
+};
+
+let human = personel;
+```
+
+Yukarıda anlatılanlardan yola çıkarak buna cevap vermek çok basit.
+
+İlk olarak aşağıdaki object heapte adreslenecek ve adresi personel isimli değişkende tutulacak.
+
+```js
+let personel = {
+  name: 'Kemal',
+  age: 34,
+};
+```
+
+**personel** isimli değişken adresi tutuyor ise **human** isimli değişkende artık aynı adresi tutuyor demektir
+
+```js
+let human = personel;
+```
+
+Bu noktadan sonra hem **personel** hem de **human** değişkenleri aynı object'i işaret etmektedirler.
+
+<Image
+  src="/images/blog/06-10-23/04.png"
+  width="400"
+  height="280"
+  alt="Image"
+/>
