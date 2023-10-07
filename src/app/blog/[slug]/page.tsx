@@ -35,7 +35,7 @@ export async function generateMetadata({
 
   const url = process.env.NEXT_PUBLIC_APP_URL;
 
-  const ogUrl = new URL(`${url}/${post.image}`);
+  const ogUrl = new URL(`${url}${post.image}`);
 
   return {
     title: post.title,
