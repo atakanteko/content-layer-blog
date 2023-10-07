@@ -1,0 +1,115 @@
+---
+title: JavaScriptin Sihirleri Destructuring
+description: Object ve Array gibi veri yapılarını daha iyi yönetmek için kod destructuring ne demek öğrenelim.
+date: '2023-10-07'
+image: /images/blog/07-10-23/01.png
+author: 'Atakan Tekoglu'
+tags:
+  - title: JavaScript
+---
+
+JavaScript'te en çok kullanılan veri yapılarının başında sanırım Object ve Array geliyordur. Hal böyle olunca bu iki veri yapısını iyi bir şekilde yönetebiliyor olmamız gerekiyor.
+
+```js
+// a JavaScript Object
+let personel = {
+  name: 'Kemal',
+  age: 32,
+};
+
+// a JavaScript Array
+let names = ['Mustafa', 'Kemal', 'Fevzi'];
+```
+
+Yukarıda bir object ve array örneğini görüyoruz. Aslında bunlar bizim isterlerimiz doğrultusunda oluşturduğumuz birer **veri paketinden** başka bir şey değiller.
+
+Madem ki bunlar birer veri paketi öyleyse bu paketi açmanın bir yolu olmalı. Bu noktada devreye **destructuring** mekanizması giriyor.
+
+##### Destructuring
+
+Destructuring, object veya array gibi veri yapılarının içindeki değerlere erişmemizi ve bu değerleri birer değişkene atarak kullanmamızı sağlayan özel bir yöntemdir.
+
+## Array Destructuring
+
+```js
+// film ismi, yayınlanma tarihi ve yönetmen bilgisini barındıran bir dizi tanımladık.
+let movie = ['Yüzüklerin Efendisi: Yüzük Kardeşliği', '2001', 'Peter Jackson'];
+
+// destructuring
+// movieName = movie[0]
+// releaseDate = movie[1]
+// director = movie[2]
+
+let [movieName, releaseDate, director] = movie;
+
+console.log(movieName); // Yüzüklerin Efendisi: Yüzük Kardeşliği
+console.log(releaseDate); // 2001
+console.log(director); // Peter Jackson
+```
+
+Bu mekanizma movie dizimizin elemanlarını teker teker ele alır. Her bir indisteki değerleri çıkarır ve daha anlamlı olan değişkenlere atamasını yapar.
+
+Kısacası bir dizideki belirli öğelere kolayca erişmemizi ve bunları ayrı değişkenlerde saklamamızı sağlar.
+
+Bildiğiniz üzere bazı metotlar array döndürür. Örneğin **split** metodu. Bu durumda destructuring yapısını kullanamamam için bir sebep yok.
+
+```js
+let myName = 'Atakan Tekoğlu';
+let [name, surname] = myName.split(' ');
+
+console.log(name); // Atakan
+console.log(surname); // Tekoğlu
+```
+
+##### _Dizide bulanan bazı elemanları görmezden gelebiliriz_
+
+```js
+let movie = ['Yüzüklerin Efendisi: Yüzük Kardeşliği', '2001', 'Peter Jackson'];
+let [movieName, , director] = movie;
+console.log(director); // Peter Jackson
+```
+
+İstenmeyen elemanları ilgili noktaya boş bir yuva bırakarak görmezden gelebiliriz.
+
+##### _.entries() ile dönen değeri karşılamak_
+
+Object.entries(obj) metodu bir dizi döndürdüğüne göre destructuring yapabilirim.
+
+```js
+let movie = {
+  name: 'Yüzüklerin Efendisi: Yüzük Kardeşliği',
+  releaseDate: '2001',
+  director: 'Peter Jackson',
+};
+
+for (let [key, value] of Object.entries(movie)) {
+  console.log(`${key}:${value}`);
+}
+
+// name:Yüzüklerin Efendisi: Yüzük Kardeşliği
+// releaseDate:2001
+// director:Peter Jackson
+```
+
+##### ...rest operatörü
+
+```js
+let movie = ['Yüzüklerin Efendisi: Yüzük Kardeşliği', '2001', 'Peter Jackson'];
+let [movieName] = movie;
+console.log(movieName); // Yüzüklerin Efendisi: Yüzük Kardeşliği
+```
+
+movie dizisi sol tarafta atama yaptığım listeden daha uzunsa arta kalan elemanlar görmezden gelinir.
+
+Eğer ki belli bir grup elemanı istiyor ve geri kalan elemanların ise ayrı bir dizide tutulmasını istiyorsak rest operatör kullanabiliriz.
+
+rest operatör (**...**) üç nokta ile ifade edilir. Bu üç nokta geride kalan elemanları bir array içine topla manasına gelir.
+
+```js
+let movie = ['Yüzüklerin Efendisi: Yüzük Kardeşliği', '2001', 'Peter Jackson'];
+let [movieName, ...restOfTheItems] = movie;
+console.log(restOfTheItems); // ['2001', 'Peter Jackson']
+let [releaseDate, director] = restOfTheItems;
+console.log(releaseDate); // 2001
+console.log(director); // Peter Jackson
+```
