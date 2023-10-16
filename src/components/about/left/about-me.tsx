@@ -6,7 +6,7 @@ const AboutMeDesc = () => {
     <div className={styles.about_me}>
       <h2>About Me</h2>
       <p>
-        My name is Atakan. {`I'm`} a Frontend Developer, having a degree in
+        My name is Atakan. {`I'm`} a Software Developer, having a degree in
         Computer Engineering. Currently, I live in Istanbul (Turkiye). My
         passion is web applications development: programming, automated testing,
         and good application architecture. {`I'm`} skilled at JavaScript,
